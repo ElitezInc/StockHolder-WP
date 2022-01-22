@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../App'
+import { api } from '../App'
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import Pagination from './PaginationComponent'
@@ -8,34 +8,31 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductsList = () => {
 
+  let currentPage = 1;
   const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-      fetchProducts();
-    }, []);
-  
-    let fetchProducts = () => {
-      api
-        .get("products", {
-          per_page: 20,
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            setProducts(response.data);
-          }
-        })
-        .catch((error) => { console.error(error)});
-    };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-  pageNavigation = () => {
-    console.log('on nav');
+  const fetchProducts = () => {
+    api
+      .get("products", {
+        per_page: 20,
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setProducts(response.data);
+        }
+      })
+      .catch((error) => { console.error(error)});
+  };
+
+  const pageNavigation = (pageNum) => {
+    currentPage = pageNum;
   }
  
-  renderCards = (products) => {
-    this.state = {
-      time: new Date().toLocaleString()
-    };
-
+  function renderCards(products) {
     return(
       <Row xs={3} className="mt-4 mb-4">
         {products.map((product, index) => {
@@ -55,26 +52,29 @@ const ProductsList = () => {
                   </Card.Text>
                 </Card.Body>
               <Card.Footer>
-                <small className="text-muted">Last updated {this.state.time}</small>
+                <small className="text-muted">Last updated {new Date().toLocaleString()}</small>
               </Card.Footer>
             </Card>
           </Col>
           );
         })}
       </Row>
-    );}
-
-    return (
-      <Container>
-        { this.renderCards(this.props.data) }
-  
-        <Pagination
-          itemsCount={145}
-          itemsPerPage={15}
-          currentPage={5}
-          setCurrentPage={this.pageNavigation}
-          alwaysShown={false}
-        />
-      </Container>
     );
+  }
+
+  return (
+    <Container>
+      { renderCards(products) }
+
+      <Pagination
+        itemsCount={products.length}
+        itemsPerPage={20}
+        currentPage={currentPage}
+        setCurrentPage={pageNavigation}
+        alwaysShown={false}
+      />
+    </Container>
+  );
 }
+
+export default ProductsList;
