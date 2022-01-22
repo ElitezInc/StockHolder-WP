@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import ProductsList from "./components/ProductsList";
-import Pagination from "./components/Pagination";
+import Pagination from "./components/PaginationComponent";
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';

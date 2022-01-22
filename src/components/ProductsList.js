@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
-import Pagination from 'react-bootstrap/Pagination'
+import Pagination from './PaginationComponent'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 class ProductsList extends Component {
@@ -45,14 +45,12 @@ class ProductsList extends Component {
       <Container>
         { this.renderCards(this.props.data) }
   
-        <Pagination>
-          <Pagination.First />
-          <Pagination.Prev />
-          <Pagination.Item>{1}</Pagination.Item>
-          <Pagination.Ellipsis />
-          <Pagination.Next />
-          <Pagination.Last />
-        </Pagination>
+        <Pagination
+          itemsCount={115}
+          itemsPerPage={15}
+          currentPage={1}
+          alwaysShown={false}
+        />
       </Container>
     );
   }
