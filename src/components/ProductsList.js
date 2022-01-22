@@ -7,11 +7,16 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 class ProductsList extends Component {
  
   renderCards = (products) => {
+
+    this.state = {
+      time: new Date().toLocaleString()
+    };
+
     return(
       <Row xs={3} className="mt-4 mb-4">
         {products.map((product, index) => {
           return (
-          <Col key={index}>
+          <Col key={index} className='mb-4'>
             <Card>
               <LazyLoadImage className='card-img-top'
                 alt={product.images[0].src.alt}
@@ -26,7 +31,7 @@ class ProductsList extends Component {
                   </Card.Text>
                 </Card.Body>
               <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Last updated {this.state.time}</small>
               </Card.Footer>
             </Card>
           </Col>
@@ -45,15 +50,6 @@ class ProductsList extends Component {
           <Pagination.Prev />
           <Pagination.Item>{1}</Pagination.Item>
           <Pagination.Ellipsis />
-  
-          <Pagination.Item>{10}</Pagination.Item>
-          <Pagination.Item>{11}</Pagination.Item>
-          <Pagination.Item active>{12}</Pagination.Item>
-          <Pagination.Item>{13}</Pagination.Item>
-          <Pagination.Item disabled>{14}</Pagination.Item>
-  
-          <Pagination.Ellipsis />
-          <Pagination.Item>{20}</Pagination.Item>
           <Pagination.Next />
           <Pagination.Last />
         </Pagination>
