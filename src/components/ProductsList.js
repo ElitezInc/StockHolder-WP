@@ -14,8 +14,6 @@ const ProductsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
 
-  console.log(currentPage);
-
   useEffect(() => {
     const fetchProducts = () => {
       api
@@ -25,7 +23,7 @@ const ProductsList = () => {
         })
         .then((response) => {
           if (response.status === 200) {
-            setTotalProducts(response.headers['x-wp-total']);
+            setTotalProducts(parseInt(response.headers['x-wp-total']));
             setProducts(response.data);
           }
         })
@@ -35,8 +33,9 @@ const ProductsList = () => {
   }, [productsPerPage, currentPage]);
 
   const pageNavigation = (pageNum) => {
-    setCurrentPage(pageNum);
-    console.log(currentPage);
+    if (pageNum !== 0) {
+      setCurrentPage(pageNum);
+    }
   }
  
   function renderCards(products) {
@@ -72,10 +71,6 @@ const ProductsList = () => {
   return (
     <Container>
       { renderCards(products) }
-
-      <h1> {totalProducts} </h1>
-      <h1> {productsPerPage} </h1>
-      <h1> {currentPage} </h1>
 
       <Pagination
         itemsCount={totalProducts}
