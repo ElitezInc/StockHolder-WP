@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import api from '../App'
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import Pagination from './PaginationComponent'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const api = new WooCommerceRestApi({
-  url: "http://localhost",
-  consumerKey: "ck_6c43d9b667acd786614f8faf427a243687a7a81e",
-  consumerSecret: "cs_d79dec45583d71e802af4067e9fefb410742bfec",
-  version: "wc/v3",
-});
-
-class ProductsList extends Component {
+const ProductsList = () => {
 
   const [products, setProducts] = useState([]);
 
@@ -35,12 +27,11 @@ class ProductsList extends Component {
         .catch((error) => { console.error(error)});
     };
 
-  pageNavigation() {
+  pageNavigation = () => {
     console.log('on nav');
   }
  
   renderCards = (products) => {
-
     this.state = {
       time: new Date().toLocaleString()
     };
@@ -73,7 +64,6 @@ class ProductsList extends Component {
       </Row>
     );}
 
-  render() {
     return (
       <Container>
         { this.renderCards(this.props.data) }
@@ -87,7 +77,4 @@ class ProductsList extends Component {
         />
       </Container>
     );
-  }
 }
-
-export default ProductsList;
