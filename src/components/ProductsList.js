@@ -8,28 +8,35 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductsList = () => {
 
-  let currentPage = 1;
+  const productsPerPage = 5;
+
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  console.log(currentPage);
 
-  const fetchProducts = () => {
-    api
-      .get("products", {
-        per_page: 20,
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          setProducts(response.data);
-        }
-      })
-      .catch((error) => { console.error(error)});
-  };
+  useEffect(() => {
+    const fetchProducts = () => {
+      api
+        .get("products", {
+          page: currentPage,
+          per_page: productsPerPage
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            setTotalProducts(response.headers['x-wp-total']);
+            setProducts(response.data);
+          }
+        })
+        .catch((error) => { console.error(error)});
+    };
+    fetchProducts();
+  }, [productsPerPage, currentPage]);
 
   const pageNavigation = (pageNum) => {
-    currentPage = pageNum;
+    setCurrentPage(pageNum);
+    console.log(currentPage);
   }
  
   function renderCards(products) {
@@ -66,9 +73,13 @@ const ProductsList = () => {
     <Container>
       { renderCards(products) }
 
+      <h1> {totalProducts} </h1>
+      <h1> {productsPerPage} </h1>
+      <h1> {currentPage} </h1>
+
       <Pagination
-        itemsCount={products.length}
-        itemsPerPage={20}
+        itemsCount={totalProducts}
+        itemsPerPage={productsPerPage}
         currentPage={currentPage}
         setCurrentPage={pageNavigation}
         alwaysShown={false}
