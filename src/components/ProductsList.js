@@ -1,17 +1,49 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { api } from '../App'
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
-import Pagination from 'react-bootstrap/Pagination'
+import Pagination from './PaginationComponent'
+import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-class ProductsList extends Component {
+const ProductsList = () => {
+
+  const productsPerPage = 5;
+
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = () => {
+      api
+        .get("products", {
+          page: currentPage,
+          per_page: productsPerPage
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            setTotalProducts(parseInt(response.headers['x-wp-total']));
+            setProducts(response.data);
+          }
+        })
+        .catch((error) => { console.error(error)});
+    };
+    fetchProducts();
+  }, [productsPerPage, currentPage]);
+
+  const pageNavigation = (pageNum) => {
+    if (pageNum !== 0) {
+      setCurrentPage(pageNum);
+    }
+  }
  
-  renderCards = (products) => {
+  function renderCards(products) {
     return(
       <Row xs={3} className="mt-4 mb-4">
         {products.map((product, index) => {
           return (
-          <Col key={index}>
+          <Col key={index} className='mb-4'>
             <Card>
               <LazyLoadImage className='card-img-top'
                 alt={product.images[0].src.alt}
@@ -26,40 +58,29 @@ class ProductsList extends Component {
                   </Card.Text>
                 </Card.Body>
               <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Last updated {new Date().toLocaleString()}</small>
               </Card.Footer>
             </Card>
           </Col>
           );
         })}
       </Row>
-    );}
-
-  render() {
-    return (
-      <Container>
-        { this.renderCards(this.props.data) }
-  
-        <Pagination>
-          <Pagination.First />
-          <Pagination.Prev />
-          <Pagination.Item>{1}</Pagination.Item>
-          <Pagination.Ellipsis />
-  
-          <Pagination.Item>{10}</Pagination.Item>
-          <Pagination.Item>{11}</Pagination.Item>
-          <Pagination.Item active>{12}</Pagination.Item>
-          <Pagination.Item>{13}</Pagination.Item>
-          <Pagination.Item disabled>{14}</Pagination.Item>
-  
-          <Pagination.Ellipsis />
-          <Pagination.Item>{20}</Pagination.Item>
-          <Pagination.Next />
-          <Pagination.Last />
-        </Pagination>
-      </Container>
     );
   }
+
+  return (
+    <Container>
+      { renderCards(products) }
+
+      <Pagination
+        itemsCount={totalProducts}
+        itemsPerPage={productsPerPage}
+        currentPage={currentPage}
+        setCurrentPage={pageNavigation}
+        alwaysShown={false}
+      />
+    </Container>
+  );
 }
 
 export default ProductsList;
