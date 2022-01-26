@@ -1,22 +1,17 @@
 import React from 'react';
-import { Row, Col, Card, Button, CardGroup, Container, Form, InputGroup } from 'react-bootstrap';
+import { Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const ProductsFilters = () => {
   return (
-    <Form>
-    <Container className="container mt-4 mb-4">
-      <Row xs={1} className="mt-4 mb-4">
-        <Col className="col-xs-12 col-md-4">
+      <Row className="mt-4 mb-4">
+        <Col xs={12} md={4}>
           <Card>
-            <CardGroup className="filter-group">
+            <div className="filter-group">
               <Card.Header>
-                <a
-                  href="/#"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapse_1"
-                  aria-expanded="true"
-                >
-                  <i className="icon-control fa fa-chevron-down" />
+                <a href="/#" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true">
+                  <FontAwesomeIcon icon={faChevronDown} className='icon-control' />
                   <h6 className="title">Product type</h6>
                 </a>
               </Card.Header>
@@ -24,14 +19,10 @@ const ProductsFilters = () => {
                 <Card.Body>
                   <Form className="pb-3">
                     <div className="input-group">
-                      <InputGroup
-                        type="text"
-                        className="form-control"
-                        placeholder="Search"
-                      />
+                      <InputGroup type="text" className="form-control" placeholder="Search" />
                       <div className="input-group-append">
                         <Button className="btn-light" type="button">
-                          <i className="fa fa-search" />
+                          <FontAwesomeIcon icon={faSearch} />
                         </Button>
                       </div>
                     </div>
@@ -61,12 +52,13 @@ const ProductsFilters = () => {
                   </ul>
                 </Card.Body>
               </div>
-            </CardGroup>
+            </div>
           </Card>
+
+          
+
         </Col>
       </Row>
-    </Container>
-    </Form>
   )
 };
 
