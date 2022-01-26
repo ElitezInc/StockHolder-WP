@@ -1,9 +1,8 @@
 import React from "react";
-import "./App.css";
+import "./styles.css";
 import Navigation from "./components/Navigation";
-import ProductsList from "./components/ProductsList";
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
-import ProductPage from "./components/pages/ProductPage";
+import ProductsPage from "./components/pages/ProductsPage";
   
 export const api = new WooCommerceRestApi({
   url: "http://localhost",
@@ -16,7 +15,7 @@ function App() {
     return (
         <div className="App">
             <Navigation logoName={"logo.svg"}/>
-            <ProductsList/>
+            <ProductsPage/>
         </div>
     );
 }

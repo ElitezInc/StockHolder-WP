@@ -1,12 +1,13 @@
 import React from 'react';
-import { api } from '../App'
+import { api } from '../../App'
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
-import Pagination from './PaginationComponent'
+import Pagination from '../PaginationComponent'
 import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import ProductsFilters from '../ProductsFilters';
 
-const ProductsList = () => {
+const ProductsPage = () => {
 
   const productsPerPage = 5;
 
@@ -38,7 +39,7 @@ const ProductsList = () => {
     }
   }
  
-  function renderCards(products) {
+  function renderProducts(products) {
     return(
       <Row xs={3} className="mt-4 mb-4">
         {products.map((product, index) => {
@@ -70,7 +71,9 @@ const ProductsList = () => {
 
   return (
     <Container>
-      { renderCards(products) }
+
+      <ProductsFilters />
+      { renderProducts(products) }
 
       <Pagination
         itemsCount={totalProducts}
@@ -83,4 +86,4 @@ const ProductsList = () => {
   );
 }
 
-export default ProductsList;
+export default ProductsPage;

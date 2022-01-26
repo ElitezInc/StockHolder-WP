@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import App from './App';
+import './styles.css'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductPage from './components/pages/ProductPage'
-import './index.css';
+import ProductsPage from './components/pages/ProductsPage'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 const Routing = () => {
@@ -12,7 +12,7 @@ const Routing = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="/product-page" element={<ProductPage />} />
+                <Route path="/products-page" element={<ProductsPage />} />
             </Routes>
         </BrowserRouter>
     )
