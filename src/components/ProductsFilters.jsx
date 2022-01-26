@@ -5,8 +5,7 @@ import { faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const ProductsFilters = () => {
   return (
-      <Row className="mt-4 mb-4">
-        <Col xs={12} md={4}>
+      <Col md={3} className="mt-4 mb-4">
           <Card>
             <div className="filter-group">
               <Card.Header>
@@ -57,8 +56,7 @@ const ProductsFilters = () => {
 
           
 
-        </Col>
-      </Row>
+      </Col>
   )
 };
 

@@ -80,3 +80,8 @@ text-decoration: none;
   background-color: #fff;
   border-color: #989898;
 }
+
+.card-body {
+  max-height: 300px;
+  overflow: auto;
+}

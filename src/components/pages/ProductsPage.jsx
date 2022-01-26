@@ -9,7 +9,7 @@ import ProductsFilters from '../ProductsFilters';
 
 const ProductsPage = () => {
 
-  const productsPerPage = 5;
+  const productsPerPage = 6;
 
   const [totalProducts, setTotalProducts] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +41,8 @@ const ProductsPage = () => {
  
   function renderProducts(products) {
     return(
-      <Row xs={3} className="mt-4 mb-4">
+      <Col md={9} className="mt-4 mb-4">
+        <Row xs={3}>
         {products.map((product, index) => {
           return (
           <Col key={index} className='mb-4'>
@@ -65,15 +66,17 @@ const ProductsPage = () => {
           </Col>
           );
         })}
-      </Row>
+        </Row>
+      </Col>
     );
   }
 
   return (
     <Container>
-
-      <ProductsFilters />
-      { renderProducts(products) }
+      <Row>
+        <ProductsFilters />
+        { renderProducts(products) }
+      </Row>
 
       <Pagination
         itemsCount={totalProducts}
