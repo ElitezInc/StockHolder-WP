@@ -2,14 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import './sass/styles.scss';
 import * as serviceWorker from './serviceWorker';
-import ProductsPage from './components/pages/ProductsPage'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import ProductsPage from './components/pages/ProductsPage'
+import HomePage from './components/pages/HomePage'
 
 const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<ProductsPage />} />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/products-page" element={<ProductsPage />} />
             </Routes>
         </BrowserRouter>
