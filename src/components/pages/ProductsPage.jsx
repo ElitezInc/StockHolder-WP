@@ -2,7 +2,7 @@ import React from 'react';
 import { api } from '../../App'
 import { Container, Row, Col } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
-import Pagination from '../PaginationComponent'
+import Pagination from '../Pagination'
 import { useEffect, useState } from "react";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ProductsFilters from '../ProductsFilters';

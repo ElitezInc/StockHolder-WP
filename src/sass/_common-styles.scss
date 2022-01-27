@@ -1,0 +1,11 @@
+/*
+header {
+    @include theme() {
+        background-color: theme-get('bg-color');
+    }
+}
+*/
+
+a {
+    text-decoration: none;
+}

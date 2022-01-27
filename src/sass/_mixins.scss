@@ -1,0 +1,24 @@
+// stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss/63221870#63221870
+// jsfiddle.net/aksh101099/zubnapr9/1
+@mixin theme() {
+    @each $theme, $map in $themes {
+        $theme-map: $map !global;
+
+        .#{$theme} & {
+            @content;
+        }
+    }
+
+    $theme-map: null !global;
+}
+
+@mixin background-image($imgUrl, $size: cover, $repeat: no-repeat, $positionX: center, $positionY: center) {
+    background-image: url($imgUrl);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $positionX $positionY;
+}
+
+@mixin border-bottom($size: 3px, $style: solid, $color: $theme-primary-color) {
+    border-bottom: $size $style $color;
+}
