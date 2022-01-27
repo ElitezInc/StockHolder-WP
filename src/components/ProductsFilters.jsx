@@ -1,11 +1,15 @@
 import React from 'react';
-import { Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
+import { Col, Card, Button, Form, InputGroup, Collapse} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { useState } from "react";
 
 const ProductsFilters = () => {
-  return (
-    <Col md={3} className="mt-4 mb-4">
+  
+  const [open, setOpen] = useState(false);
+
+  const productTypeFilter = () => {
+    return (
       <Card>
         <div className="filter-group">
           <Card.Header>
@@ -53,40 +57,79 @@ const ProductsFilters = () => {
           </div>
         </div>
       </Card>
-      <Card>
-        <div className="filter-group">
-          <Card.Header className="card-header">
-            <a href="/#" data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="true">
-            <FontAwesomeIcon icon={faChevronDown} className='icon-control'/><FontAwesomeIcon />
-              <h6 className="title">Brands </h6>
-            </a>
+    );
+  }
+
+  const brandsFilter = () => {
+    return (
+        <Card>
+          <Card.Header>
           </Card.Header>
+          <Form>
             <Card.Body className="card-body">
-              <InputGroup type="checkbox" checked="" className="custom-control-input" />
-              <div className="custom-control-label">Mercedes
+            <Form.Check 
+              type={'checkbox'}
+              id={`one`}
+              label={`Mercedes <span className="badge bg-secondary float-end">${120}</span >`}
+            />
+            <Form.Check 
+              type={'checkbox'}
+              id={`two`}
+              label={`Mercedes <span className="badge bg-secondary float-end">${65}</span >`}
+            />
+            <Form.Check 
+              type={'checkbox'}
+              id={`three`}
+              label={`Mercedes ${'<span className="badge bg-secondary float-end"'}>${35}</span >`}
+            />
+            <hr/>
+            <div class="custom-control">
+              <input type="checkbox" checked="" class="custom-control-input"/>
+              <div className="custom-control-label">
+                Mercedes
                 <span className="badge bg-secondary float-end">120</span >
               </div>
-              <InputGroup type="checkbox" checked="" className="custom-control-input" />
-              <div className="custom-control-label">Toyota
-                <b className="badge bg-secondary badge-light float-end">15</b>
+            </div>
+            <div class="custom-control">
+              <Form.Check class="custom-control-input" />
+              <div className="custom-control-label">
+                Toyota
+                <span className="badge bg-secondary badge-light float-end">15</span>
               </div>
-              <InputGroup type="checkbox" checked="" className="custom-control-input" />
-              <div className="custom-control-label">Mitsubishi
-                <b className="badge bg-secondary badge-light float-end">35</b>
+            </div>
+            <div class="custom-control">
+              <Form.Check class="custom-control-input" />
+              <div className="custom-control-label">
+                Mitsubishi
+                <span className="badge bg-secondary badge-light float-end">35</span>
               </div>
-              <InputGroup type="checkbox" checked="" className="custom-control-input" />
-              <div className="custom-control-label">Nissan
-                <b className="badge bg-secondary badge-light float-end">89</b>
+            </div>
+            <label class="custom-control custom-checkbox">
+              <Form.Check className="custom-control-input" />
+              <div className="custom-control-label">
+                Nissan
+                <span className="badge bg-secondary badge-light float-end">89</span>
               </div>
-              <InputGroup type="checkbox" className="custom-control-input" />
-              <div className="custom-control-label">Honda
-                <b className="badge bg-secondary badge-light float-end">30</b>
+            </label>
+            <label class="custom-control custom-checkbox">
+              <Form.Check className="custom-control-input" />
+              <div className="custom-control-label">
+                Honda
+                <span className="badge bg-secondary badge-light float-end">30</span>
               </div>
+            </label>
             </Card.Body>
-        </div>
+          </Form>
       </Card>
+    );
+  }
+
+  return (
+    <Col md={3} className="mt-4 mb-4">
+      { productTypeFilter() }
+      { brandsFilter() }
     </Col>
-  )
+  );
 };
 
 export default ProductsFilters;
