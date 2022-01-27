@@ -39,7 +39,7 @@ const ProductsPage = () => {
     }
   }
  
-  function renderProducts(products) {
+  function renderProducts(products, viewAsGrid = true) {
     return(
       <Col md={9} className="mt-4 mb-4">
         <Row xs={3}>
@@ -75,7 +75,7 @@ const ProductsPage = () => {
     <Container>
       <Row>
         <ProductsFilters />
-        { renderProducts(products) }
+        <ProductList products={products} productsPerPage={6} />
       </Row>
 
       <Pagination
