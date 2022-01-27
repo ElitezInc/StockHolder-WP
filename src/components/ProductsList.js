@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductList = ({
   products,
-  productsPerPage,
   viewAsGrid = true
 }) => {
       return(

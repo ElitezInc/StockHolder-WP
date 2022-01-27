@@ -42,7 +42,7 @@ const ProductsPage = () => {
     <Container>
       <Row>
         <ProductsFilters />
-        <ProductsList products={products} productsPerPage={productsPerPage} />
+        <ProductsList products={products} />
       </Row>
 
       <Pagination
