@@ -1,5 +1,5 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
 // Base
 @import 'variables';
@@ -11,6 +11,3 @@
 @import 'components/navbar';
 @import 'components/filters';
 @import 'components/products';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
