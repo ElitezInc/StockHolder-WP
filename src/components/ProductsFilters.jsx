@@ -57,7 +57,7 @@ const ProductsFilters = () => {
         <div className="filter-group">
           <Card.Header className="card-header">
             <a href="/#" data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="true">
-            <FontAwesomeIcon icon={faChevronDown} className='icon-control'/><FontAwesomeIcon icon={faSearch}/>
+            <FontAwesomeIcon icon={faChevronDown} className='icon-control'/><FontAwesomeIcon />
               <h6 className="title">Brands </h6>
             </a>
           </Card.Header>
