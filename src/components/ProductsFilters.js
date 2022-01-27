@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, Button, Form, InputGroup, Collapse} from 'react-bootstrap';
+import { Card, Button, Form, InputGroup, Collapse} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
@@ -120,12 +120,10 @@ const ProductsFilters = () => {
   }
 
   return (
-    <Col md={3} className="mt-4 mb-4">
-      <div className='filter-group'>
-        { productTypeFilter() }
-        { brandsFilter() }
-      </div>
-    </Col>
+    <div className='filter-group'>
+      { productTypeFilter() }
+      { brandsFilter() }
+    </div>
   );
 };
 

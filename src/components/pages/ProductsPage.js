@@ -1,6 +1,6 @@
 import React from 'react';
 import { api } from '../../api'
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Pagination from '../Pagination'
 import { useEffect, useState } from "react";
 import ProductsFilters from '../ProductsFilters';
@@ -43,18 +43,21 @@ const ProductsPage = () => {
     <>
     <Navigation logoName={"logo.svg"} />
     <Container>
-      <Row>
-        <ProductsFilters />
-        <ProductsList products={products} />
+      <Row className="mt-4 mb-4">
+        <Col md={3}>
+          <ProductsFilters />
+        </Col>
+        <Col md={9}>
+          <ProductsList products={products} viewAsGrid={true} />
+          <Pagination
+            itemsCount={totalProducts}
+            itemsPerPage={productsPerPage}
+            currentPage={currentPage}
+            setCurrentPage={pageNavigation}
+            alwaysShown={false}
+          />
+        </Col>
       </Row>
-
-      <Pagination
-        itemsCount={totalProducts}
-        itemsPerPage={productsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={pageNavigation}
-        alwaysShown={false}
-      />
     </Container>
     </>
   );
