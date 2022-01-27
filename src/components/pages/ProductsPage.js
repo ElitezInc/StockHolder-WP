@@ -1,11 +1,11 @@
 import React from 'react';
 import { api } from '../../api'
 import { Container, Row, Col } from "react-bootstrap";
-import Pagination from '../Pagination'
+import Pagination from '../layout/Pagination'
 import { useEffect, useState } from "react";
-import ProductsFilters from '../ProductsFilters';
-import ProductsList from '../ProductsList';
-import Navigation from '../Navigation';
+import ProductsFilters from '../layout/ProductsFilters';
+import ProductsList from '../layout/ProductsList';
+import Navigation from '../layout/Navigation';
 
 const ProductsPage = () => {
 
