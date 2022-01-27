@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import App from './App';
 import './sass/styles.scss';
 import * as serviceWorker from './serviceWorker';
 import ProductsPage from './components/pages/ProductsPage'
@@ -10,7 +9,7 @@ const Routing = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<ProductsPage />} />
                 <Route path="/products-page" element={<ProductsPage />} />
             </Routes>
         </BrowserRouter>

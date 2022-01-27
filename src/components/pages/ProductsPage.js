@@ -1,10 +1,11 @@
 import React from 'react';
-import { api } from '../../App'
+import { api } from '../../api'
 import { Container, Row } from "react-bootstrap";
 import Pagination from '../Pagination'
 import { useEffect, useState } from "react";
 import ProductsFilters from '../ProductsFilters';
 import ProductsList from '../ProductsList';
+import Navigation from '../Navigation';
 
 const ProductsPage = () => {
 
@@ -39,6 +40,8 @@ const ProductsPage = () => {
   }
 
   return (
+    <>
+    <Navigation logoName={"logo.svg"} />
     <Container>
       <Row>
         <ProductsFilters />
@@ -53,6 +56,7 @@ const ProductsPage = () => {
         alwaysShown={false}
       />
     </Container>
+    </>
   );
 }
 
