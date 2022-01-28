@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Form, InputGroup, Collapse } from 'react-bootstrap';
+import { Card, Button, Form, Collapse } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
@@ -10,13 +10,13 @@ const ProductsFilters = () => {
   const [brandsOpen, setBrandsOpen] = useState(true);
   const [pricesOpen, setPricesOpen] = useState(true);
   const [sizesOpen, setSizesOpen] = useState(true);
-  const [moresOpen, setMoresOpen] = useState(true);
+  const [MoreOpen, setMoreOpen] = useState(true);
 
   const productTypeFilter = () => {
     return (
       <Card>
         <Card.Header>
-          <a href="# " onClick={() => setTypesOpen(!typesOpen)} aria-expanded={typesOpen}>
+          <a href="# " onClick={(event) => { event.preventDefault(); setTypesOpen(!typesOpen); }} aria-expanded={typesOpen}>
             <FontAwesomeIcon icon={typesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Product type</h6>
           </a>
@@ -66,7 +66,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href="# " onClick={() => setBrandsOpen(!brandsOpen)} aria-expanded={brandsOpen}>
+          <a href="# " onClick={(event) => { event.preventDefault(); setBrandsOpen(!brandsOpen); }} aria-expanded={brandsOpen}>
             <FontAwesomeIcon icon={brandsOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Brands</h6>
           </a>
@@ -126,7 +126,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href="# " onClick={() => setPricesOpen(!pricesOpen)} aria-expanded={pricesOpen}>
+          <a href="# " onClick={(event) => { event.preventDefault(); setPricesOpen(!pricesOpen); }} aria-expanded={pricesOpen}>
             <FontAwesomeIcon icon={pricesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Price range</h6>
           </a>
@@ -134,18 +134,18 @@ const ProductsFilters = () => {
         <Collapse in={pricesOpen}>
           <Form>
             <Card.Body className="card-body">
-              <Form.Range type="range" class="custom-range" min="0" max="100" name="" />
-              <div class="row">
-                <div class="form-group col-md-6">
+              <Form.Range type="range" className="custom-range" min="0" max="100" name="" />
+              <div className="row">
+                <div className="form-group col-md-6">
                   <label>Min</label>
-                  <input class="form-control" placeholder="$0" type="number" />
+                  <input className="form-control" placeholder="$0" type="number" />
                 </div>
-                <div class="form-group text-right col-md-6">
+                <div className="form-group text-right col-md-6">
                   <label>Max</label>
-                  <input class="form-control" placeholder="$1,0000" type="number" />
+                  <input className="form-control" placeholder="$1,0000" type="number" />
                 </div>
               </div>
-              <button class="btn btn-block btn-primary mt-3" style={{ background: '#555555' }}>Apply</button>
+              <button className="btn btn-block btn-primary mt-3" style={{ background: '#555555' }}>Apply</button>
             </Card.Body>
           </Form>
         </Collapse>
@@ -157,7 +157,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href="# " onClick={() => setSizesOpen(!sizesOpen)} aria-expanded={sizesOpen}>
+          <a href="# " onClick={(event) => { event.preventDefault(); setSizesOpen(!sizesOpen); }} aria-expanded={sizesOpen}>
             <FontAwesomeIcon icon={sizesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Size</h6>
           </a>
@@ -165,21 +165,21 @@ const ProductsFilters = () => {
         <Collapse in={sizesOpen}>
           <Form>
             <Card.Body className="card-body">
-              <label class="checkbox-btn">
+              <label className="checkbox-btn">
                 <input type="checkbox" />
-                <span class="btn btn-light"> XS </span>
+                <span className="btn btn-light"> XS </span>
               </label>
-              <label class="checkbox-btn">
+              <label className="checkbox-btn">
                 <input type="checkbox" />
-                <span class="btn btn-light"> SM </span>
+                <span className="btn btn-light"> SM </span>
               </label>
-              <label class="checkbox-btn">
+              <label className="checkbox-btn">
                 <input type="checkbox" />
-                <span class="btn btn-light"> LG </span>
+                <span className="btn btn-light"> LG </span>
               </label>
-              <label class="checkbox-btn">
+              <label className="checkbox-btn">
                 <input type="checkbox" />
-                <span class="btn btn-light"> XXL </span>
+                <span className="btn btn-light"> XXL </span>
               </label>
             </Card.Body>
           </Form>
@@ -192,30 +192,30 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href="# " onClick={() => setMoresOpen(!moresOpen)} aria-expanded={moresOpen}>
-            <FontAwesomeIcon icon={moresOpen ? faChevronDown : faChevronRight} className='icon-control' />
+          <a href="# " onClick={(event) => { event.preventDefault(); setMoreOpen(!MoreOpen); }} aria-expanded={MoreOpen}>
+            <FontAwesomeIcon icon={MoreOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">More filter</h6>
           </a>
         </Card.Header>
-        <Collapse in={moresOpen}>
+        <Collapse in={MoreOpen}>
           <Form>
             <Card.Body className="card-body">
-                <div class="card-body">
-                  <label class="custom-control custom-radio">
-                    <input type="radio" name="myfilter_radio" class="custom-control-input" />
-                    <div class="custom-control-label">Any condition</div>
+                <div className="card-body">
+                  <label className="custom-control custom-radio">
+                    <input type="radio" name="myfilter_radio" className="custom-control-input" />
+                    <div className="custom-control-label">Any condition</div>
                   </label>
-                  <label class="custom-control custom-radio">
-                    <input type="radio" name="myfilter_radio" class="custom-control-input" />
-                    <div class="custom-control-label">Brand new </div>
+                  <label className="custom-control custom-radio">
+                    <input type="radio" name="myfilter_radio" className="custom-control-input" />
+                    <div className="custom-control-label">Brand new </div>
                   </label>
-                  <label class="custom-control custom-radio">
-                    <input type="radio" name="myfilter_radio" class="custom-control-input" />
-                    <div class="custom-control-label">Used items</div>
+                  <label className="custom-control custom-radio">
+                    <input type="radio" name="myfilter_radio" className="custom-control-input" />
+                    <div className="custom-control-label">Used items</div>
                   </label>
-                  <label class="custom-control custom-radio">
-                    <input type="radio" name="myfilter_radio" class="custom-control-input" />
-                    <div class="custom-control-label">Very old</div>
+                  <label className="custom-control custom-radio">
+                    <input type="radio" name="myfilter_radio" className="custom-control-input" />
+                    <div className="custom-control-label">Very old</div>
                   </label>
                 </div>
             </Card.Body>
