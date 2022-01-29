@@ -11,12 +11,12 @@ const Navigation = ({
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/#">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/products-page">Products</Nav.Link>
+            <Nav.Link href="/#">Home</Nav.Link>
+            <Nav.Link href="/#/products-page">Products</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="/#">Action</NavDropdown.Item>
               <NavDropdown.Item href="/#">Another action</NavDropdown.Item>
