@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ProductsFilters from '../layout/ProductsFilters';
 import ProductsList from '../layout/ProductsList';
 import Navigation from '../layout/Navigation';
+import ProductsTopBar from '../layout/ProductsTopBar';
 
 const ProductsPage = () => {
 
@@ -48,6 +49,7 @@ const ProductsPage = () => {
           <ProductsFilters />
         </Col>
         <Col md={9}>
+          <ProductsTopBar />
           <ProductsList products={products} viewAsGrid={true} />
           <Pagination
             itemsCount={totalProducts}
