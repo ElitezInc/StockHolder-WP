@@ -15,10 +15,10 @@ const ProductsTopBar = () => {
                 <option value="3">Most popular</option>
               </Form.Select>
               <div className="btn-group">
-                  <a href={location.hash} className="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
+                  <a href={window.location.hash} className="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
                     <FontAwesomeIcon icon ={faBars} />
                   </a>
-                  <a href={location.hash} className="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
+                  <a href={window.location.hash} className="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
                       <FontAwesomeIcon icon ={faTh} /> 
                   </a>
               </div>
