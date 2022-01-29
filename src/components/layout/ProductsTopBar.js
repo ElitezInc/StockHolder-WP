@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTh, faBars } from '@fortawesome/free-solid-svg-icons'
 
 const ProductsTopBar = () => {
   return(
-      <Card.Header className="head-backand">
+      <div className="head-backand">
           <Form className='d-flex'>
               <span className='me-md-auto'>32 Items found</span>
               <Form.Select className='me-2' style={{width: '200px'}} aria-label="Default select example">
@@ -15,16 +15,16 @@ const ProductsTopBar = () => {
                 <option value="3">Most popular</option>
               </Form.Select>
               <div className="btn-group">
-                  <a href="# " className="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
-                  <FontAwesomeIcon icon ={faBars} />
+                  <a href={location.hash} className="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
+                    <FontAwesomeIcon icon ={faBars} />
                   </a>
-                  <a href="# " className="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
+                  <a href={location.hash} className="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
                       <FontAwesomeIcon icon ={faTh} /> 
                   </a>
               </div>
           </Form>
         <hr/>
-      </Card.Header>
+      </div>
   )
 }
 
