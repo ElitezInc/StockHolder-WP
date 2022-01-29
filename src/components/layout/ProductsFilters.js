@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Form, Collapse } from 'react-bootstrap';
+import { Card, Button, Form, Collapse, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react";
@@ -135,16 +135,16 @@ const ProductsFilters = () => {
           <Form>
             <Card.Body className="card-body">
               <Form.Range type="range" className="custom-range" min="0" max="100" name="" />
-              <div className="row">
+              <Row>
                 <div className="form-group col-md-6">
                   <label>Min</label>
-                  <input className="form-control" placeholder="$0" type="number" />
+                  <input className="form-control" style={{width: '100px'}} placeholder="$0" type="number" />
                 </div>
                 <div className="form-group text-right col-md-6">
                   <label>Max</label>
-                  <input className="form-control" placeholder="$1,0000" type="number" />
+                  <input className="form-control" style={{width: '100px'}} placeholder="$1,0000" type="number" />
                 </div>
-              </div>
+              </Row>
               <button className="btn btn-block btn-primary mt-3" style={{ background: '#555555' }}>Apply</button>
             </Card.Body>
           </Form>

@@ -14,11 +14,11 @@ const ProductsTopBar = () => {
                 <option value="2">Cheapest</option>
                 <option value="3">Most popular</option>
               </Form.Select>
-              <div class="btn-group">
-                  <a href="# " class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
+              <div className="btn-group">
+                  <a href="# " className="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
                   <FontAwesomeIcon icon ={faBars} />
                   </a>
-                  <a href="# " class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
+                  <a href="# " className="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
                       <FontAwesomeIcon icon ={faTh} /> 
                   </a>
               </div>
