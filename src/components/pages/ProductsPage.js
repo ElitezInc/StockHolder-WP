@@ -15,6 +15,7 @@ const ProductsPage = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
+  const [viewAsGrid, setGridView] = useState(true);
 
   useEffect(() => {
     const fetchProducts = () => {
@@ -49,8 +50,8 @@ const ProductsPage = () => {
           <ProductsFilters />
         </Col>
         <Col md={9}>
-          <ProductsTopBar />
-          <ProductsList products={products} viewAsGrid={true} />
+          <ProductsTopBar onViewToggle={(value) => setGridView(value)} />
+          <ProductsList products={products} viewAsGrid={viewAsGrid} />
           <Pagination
             itemsCount={totalProducts}
             itemsPerPage={productsPerPage}

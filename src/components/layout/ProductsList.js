@@ -7,7 +7,7 @@ const ProductList = ({
   viewAsGrid = true
 }) => {
  return(
-   <Row xs={3}>
+   <Row xs={viewAsGrid ? 3 : 1}>
      {products.map((product, index) => {
        return (
        <Col key={index} className='mb-4'>
