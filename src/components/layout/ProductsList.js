@@ -16,9 +16,8 @@ const ProductList = ({
                 <LazyLoadImage className='card-img-top'
                   alt={product.images[0].src.alt}
                   height={product.images[0].src.height}
-                  src={product.images[0].src.src}
+                  src={product.images[0].src}
                   width={product.images[0].src.width} />
-                <Card.Img variant="top" src={product.images[0].src} />
                 <Card.Body>
                   <Card.Title>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</Card.Title>
                   <Card.Text>
