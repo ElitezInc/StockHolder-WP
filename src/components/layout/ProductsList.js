@@ -1,35 +1,34 @@
 import React from 'react';
-import { Col, Card, Row, Button, Form } from 'react-bootstrap';
+import { Col, Card, Row, Button} from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductList = ({
   products,
-  viewAsGrid = true
+  viewAsGrid = true,
+  onProductAddToCart
 }) => {
+
   const displayAsGrid = () => {
-    return(
+    return (
       <Row xs={3}>
         {products.map((product, index) => {
           return (
             <Col key={index} className='mb-4'>
-              <Card>
-                <LazyLoadImage className='card-img-top'
-                  alt={product.images[0].src.alt}
-                  height={product.images[0].src.height}
-                  src={product.images[0].src}
-                  width={product.images[0].src.width} />
-                <Card.Body>
-                  <Card.Title>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</Card.Title>
-                  <Card.Text>
-                    {product.description.replace(/<\/?[^>]+(>|$)/g, "")}
-                  </Card.Text>
-                  <div className="d-grid gap-2">
-                    <Button variant="dark" size="lg">
-                      Add to cart
-                    </Button>
-                  </div>
-                </Card.Body>
-              </Card>
+                  <LazyLoadImage className='card-img-top'
+                    alt={product.images[0].src.alt}
+                    height={product.images[0].src.height}
+                    src={product.images[0].src}
+                    width={product.images[0].src.width} />
+                  <Card.Body>
+                  <a href="#" class="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
+                    <div class="card-body-list mt-3" style={{height: '150px'}}>
+                      <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
+                    </div>
+                      <span class="price"> <h5>${product.price}</h5> </span>
+                      <Button variant="dark" size="lg" onClick={() => onProductAddToCart(product)}>
+                        Add to cart
+                      </Button>
+                  </Card.Body>
             </Col>
           );
         })}
@@ -63,12 +62,12 @@ const ProductList = ({
                   <Col xl={3} md={3} sm={5}>
                     <div class="info-aside">
                       <div class="price-wrap mt-3">
-                        <span class="price"> <h5>${product.price}</h5> </span>  
+                        <span class="price"><h5>${product.price}</h5> </span>  
                       </div>
                       <p class="text-success">Free shipping</p>
-                      <br/>
                       <div class="mb-3">
-                        <Button variant="dark" size="lg"> Add to cart </Button>
+                      <div className="vr" />
+                        <Button variant="dark" size="lg" onClick={() => onProductAddToCart(product)}> Add to cart </Button>
                       </div>
                     </div>
                   </Col>

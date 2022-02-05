@@ -7,8 +7,11 @@ import ProductsFilters from '../layout/ProductsFilters';
 import ProductsList from '../layout/ProductsList';
 import Navigation from '../layout/Navigation';
 import ProductsTopBar from '../layout/ProductsTopBar';
+import {useCart} from "react-use-cart";
 
 const ProductsPage = () => {
+
+  const {addItem} = useCart();
 
   const productsPerPage = 6;
 
@@ -51,7 +54,14 @@ const ProductsPage = () => {
         </Col>
         <Col md={9}>
           <ProductsTopBar onViewToggle={(value) => setGridView(value)} />
-          <ProductsList products={products} viewAsGrid={viewAsGrid} />
+          <ProductsList 
+            products={products} 
+            viewAsGrid={viewAsGrid} 
+            onProductAddToCart={(product) => addItem({
+              id: product.id,
+              price: product.price
+            } )}
+          />
           <Pagination
             itemsCount={totalProducts}
             itemsPerPage={productsPerPage}

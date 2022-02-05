@@ -3,6 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import {Container} from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = ({
   logoName
@@ -14,7 +16,7 @@ const Navigation = ({
         <Navbar.Brand href="/#">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="/#">Home</Nav.Link>
             <Nav.Link href="/#/products-page">Products</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -24,6 +26,11 @@ const Navigation = ({
               <NavDropdown.Divider />
               <NavDropdown.Item href="/#">Separated link</NavDropdown.Item>
             </NavDropdown>
+            <div className="btn-group ms-5 shopping-cart-icon">
+              <a href={window.location.hash}>
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </a>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

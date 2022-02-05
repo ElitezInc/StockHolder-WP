@@ -5,12 +5,14 @@ import * as serviceWorker from './serviceWorker';
 import {HashRouter, Routes, Route } from 'react-router-dom'
 import ProductsPage from './components/pages/ProductsPage'
 import HomePage from './components/pages/HomePage'
+import CartPage from './components/pages/CartPage';
 
 const Routing = () => {
     return (
         <HashRouter>
             <Routes>
                 <Route exact path="/" element={<HomePage />} />
+                <Route exact path="/cart" element={<CartPage />} />
                 <Route exact path="/products-page" element={<ProductsPage />} />
             </Routes>
         </HashRouter>
