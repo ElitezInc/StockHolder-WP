@@ -6,6 +6,7 @@ import {HashRouter, Routes, Route } from 'react-router-dom'
 import ProductsPage from './components/pages/ProductsPage'
 import HomePage from './components/pages/HomePage'
 import CartPage from './components/pages/CartPage';
+import { CartProvider } from 'react-use-cart';
 
 const Routing = () => {
     return (
@@ -19,7 +20,7 @@ const Routing = () => {
     )
 }
 
-ReactDOM.render(<Routing />, document.getElementById('root'));
+ReactDOM.render(<CartProvider><Routing /></CartProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
