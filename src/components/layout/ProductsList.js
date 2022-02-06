@@ -21,11 +21,11 @@ const ProductList = ({
                     src={product.images[0].src}
                     width={product.images[0].src.width} />
                   <Card.Body>
-                  <a href={window.location.href} class="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
-                    <div class="card-body-list mt-3" style={{height: '150px'}}>
+                  <a href={window.location.href} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
+                    <div className="card-body-list mt-3" style={{height: '150px'}}>
                       <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
                     </div>
-                      <span class="price"> <h5>${product.price}</h5> </span>
+                      <span className="price"> <h5>${product.price}</h5> </span>
                       <Button variant="dark" size="lg" onClick={() => onProductAddToCart(product)}>
                         Add to cart
                       </Button>
@@ -48,7 +48,7 @@ const ProductList = ({
               <Card>
                 <Row>
                   <Col xl={3} md={4}>
-                    <a href={window.location.href} class="img-wrap"> 
+                    <a href={window.location.href} className="img-wrap"> 
                       <LazyLoadImage className='card-img-top'
                         alt={product.images[0].src.alt}
                         height={product.images[0].src.height}
@@ -57,18 +57,18 @@ const ProductList = ({
                     </a>
                   </Col>
                   <Col xl={6} md={5} sm={7}>
-                    <div class="card-body-list mt-3">
-                      <a href={window.location.href} class="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
+                    <div className="card-body-list mt-3">
+                      <a href={window.location.href} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
                       <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
                     </div>
                   </Col>
                   <Col xl={3} md={3} sm={5}>
-                    <div class="info-aside">
-                      <div class="price-wrap mt-3">
-                        <span class="price"><h5>${product.price}</h5> </span>  
+                    <div className="info-aside">
+                      <div className="price-wrap mt-3">
+                        <span className="price"><h5>${product.price}</h5> </span>  
                       </div>
-                      <p class="text-success">Free shipping</p>
-                      <div class="mb-3">
+                      <p className="text-success">Free shipping</p>
+                      <div className="mb-3">
                       <div className="vr" />
                         <Button variant="dark" size="lg" onClick={() => onProductAddToCart(product)}> Add to cart </Button>
                       </div>
