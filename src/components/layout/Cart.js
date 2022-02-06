@@ -20,7 +20,7 @@ const Cart = () => {
             <div className='row justify-content-center'>
                 <div className='col-12'>
                     <h5>Cart ({totalUniqueItems}) total Items: ({totalItems})</h5>
-                    <table className='table table-light table-hover m-0'>
+                    <table className='table table-light table-hover m-0 mb-5'>
                         <tbody>
                             {items.map((item, index) => {
                                 return (
@@ -30,7 +30,7 @@ const Cart = () => {
                                         </td>
                                         <td>{item.title}</td>
                                         <td>$ {item.price}</td>
-                                        <td>Quantity {item.quantity}</td>
+                                        <td>Item: {item.quantity}</td>
                                         <td>
                                             <button className='btn btn-info m-2'
                                                 onClick={() => updateItemQuantity(item.id, item.quantity - 1)}

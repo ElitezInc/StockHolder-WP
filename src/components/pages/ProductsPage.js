@@ -59,6 +59,7 @@ const ProductsPage = () => {
             viewAsGrid={viewAsGrid} 
             onProductAddToCart={(product) => addItem({
               id: product.id,
+              img: product.images[0].src,
               name: product.name.replace(/<\/?[^>]+(>|$)/g, ""),
               price: product.price
             } )}

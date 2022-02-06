@@ -13,8 +13,9 @@ const ProductList = ({
       <Row xs={3}>
         {products.map((product, index) => {
           return (
-            <Col key={index} className='mb-4'>
-                  <LazyLoadImage className='card-img-top'
+            <div key={index} className='mb-4 product-list'>
+              <Card>
+                <LazyLoadImage className='card-img-top'
                     alt={product.images[0].src.alt}
                     height={product.images[0].src.height}
                     src={product.images[0].src}
@@ -28,8 +29,10 @@ const ProductList = ({
                       <Button variant="dark" size="lg" onClick={() => onProductAddToCart(product)}>
                         Add to cart
                       </Button>
-                  </Card.Body>
-            </Col>
+                </Card.Body>
+              </Card>
+                  
+            </div>
           );
         })}
       </Row>

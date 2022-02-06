@@ -26,8 +26,9 @@ const Navigation = ({
               <NavDropdown.Divider />
               <NavDropdown.Item href="/#">Separated link</NavDropdown.Item>
             </NavDropdown>
-            <div className="btn-group ms-5 shopping-cart-icon">
-              <a href={window.location.hash}>
+            <div className="btn-group ms-5 shopping-cart-icon count-item-cart">
+              <a href="/#/Cart">
+                <span>0</span>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </a>
             </div>

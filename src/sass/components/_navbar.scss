@@ -1,3 +1,20 @@
 .shopping-cart-icon {
     top: 7px;
 }
+
+.count-item-cart span{
+cursor: pointer;
+position: relative;
+}
+
+.count-item-cart span{
+    position: absolute;
+    top: -12px;
+    background: crimson;
+    font-size: 10px;
+    left: 9px;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: 1;
+    }

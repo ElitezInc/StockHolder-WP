@@ -35,25 +35,25 @@ const ProductsFilters = () => {
             </Form>
             <ul className="list-menu">
               <li>
-                <a href="/#">People </a>
+                <a href={window.location.href}>People </a>
               </li>
               <li>
-                <a href="/#">Watches </a>
+                <a href={window.location.href}>Watches </a>
               </li>
               <li>
-                <a href="/#">Cinema </a>
+                <a href={window.location.href}>Cinema </a>
               </li>
               <li>
-                <a href="/#">Clothes </a>
+                <a href={window.location.href}>Clothes </a>
               </li>
               <li>
-                <a href="/#">Home items </a>
+                <a href={window.location.href}>Home items </a>
               </li>
               <li>
-                <a href="/#">Animals</a>
+                <a href={window.location.href}>Animals</a>
               </li>
               <li>
-                <a href="/#">People </a>
+                <a href={window.location.href}>People </a>
               </li>
             </ul>
           </Card.Body>
