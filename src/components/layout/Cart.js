@@ -13,13 +13,12 @@ const Cart = () => {
         emptyCart,
     } = useCart();
 
-    if (IsEmpty) return <h1 className='text-center'>Your cart is Empty</h1>
-    
+    if (IsEmpty) return <h1 className='text-center'>Your cart is Empty</h1> 
     return (
-        <section className='py-4 container'>
+        <section className='py-4 container'> 
             <div className='row justify-content-center'>
                 <div className='col-12'>
-                    <h5>Cart ({totalUniqueItems}) total Items: ({totalItems})</h5>
+                    <h5>Your shopping cart</h5>
                     <table className='table table-light table-hover m-0 mb-5'>
                         <tbody>
                             {items.map((item, index) => {

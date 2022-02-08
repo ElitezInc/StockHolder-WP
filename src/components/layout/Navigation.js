@@ -28,7 +28,7 @@ const Navigation = ({
             </NavDropdown>
             <div className="btn-group ms-5 shopping-cart-icon count-item-cart">
               <a href="/#/Cart">
-                <span>0</span>
+                <span>1</span>
                 <FontAwesomeIcon icon={faShoppingCart} />
               </a>
             </div>

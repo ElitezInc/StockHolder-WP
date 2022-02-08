@@ -10,7 +10,7 @@ const ProductList = ({
 
   const displayAsGrid = () => {
     return (
-      <Row xs={3}>
+      <Row xs={3} >
         {products.map((product, index) => {
           return (
             <div key={index} className='mb-4 product-list'>
@@ -30,8 +30,7 @@ const ProductList = ({
                         Add to cart
                       </Button>
                 </Card.Body>
-              </Card>
-                  
+              </Card>          
             </div>
           );
         })}
