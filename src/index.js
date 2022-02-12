@@ -7,6 +7,7 @@ import ProductsPage from './components/pages/ProductsPage'
 import HomePage from './components/pages/HomePage'
 import CartPage from './components/pages/CartPage';
 import { CartProvider } from 'react-use-cart';
+import CheckoutPage from './components/pages/CheckoutPage';
 
 const Routing = () => {
     return (
@@ -15,6 +16,7 @@ const Routing = () => {
                 <Route exact path="/" element={<HomePage />} />
                 <Route exact path="/cart" element={<CartPage />} />
                 <Route exact path="/products-page" element={<ProductsPage />} />
+                <Route exact path="/checkout-page" element={<CheckoutPage />} />
             </Routes>
         </HashRouter>
     )

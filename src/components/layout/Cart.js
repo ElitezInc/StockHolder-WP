@@ -55,7 +55,7 @@ const Cart = () => {
                         className='btn btn-danger m-2'
                         onClick={() => emptyCart()}
                     >Clear Cart</button>
-                    <button className='btn btn-primary m-2'>Buy Now</button>
+                    <a href='/#/checkout-page' className='btn btn-primary m-2'>Buy Now</a>
                 </div>
             </div>
         </section>

@@ -1,0 +1,33 @@
+.numberCircle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+
+    border: 2px solid grey;
+    color: grey;
+    text-align: center;
+
+    font: 25px Arial, sans-serif;
+}
+
+.payment-step {
+  background: #297cbb ;
+  border: 0px;
+  color: white;
+}
+
+.input {
+    position: relative
+}
+
+.input i {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    color: #989898
+}
+
+.input input {
+    text-indent: 25px
+}
