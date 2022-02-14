@@ -8,6 +8,9 @@ import HomePage from './components/pages/HomePage'
 import CartPage from './components/pages/CartPage';
 import { CartProvider } from 'react-use-cart';
 import CheckoutPage from './components/pages/CheckoutPage';
+import { builder } from '@builder.io/react'
+ 
+builder.init('28dfaf6d02c24581bc359386a322bead');
 
 const Routing = () => {
     return (
