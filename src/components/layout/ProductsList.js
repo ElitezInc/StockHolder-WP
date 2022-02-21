@@ -7,7 +7,6 @@ const ProductList = ({
   viewAsGrid = true,
   onProductAddToCart
 }) => {
-
   const displayAsGrid = () => {
     return (
       <Row xs={3} >
@@ -84,9 +83,9 @@ const ProductList = ({
   }
 
   return(
-    <>
-      {viewAsGrid ? displayAsGrid() : displayAsList()}
-    </>
+  <>
+    {viewAsGrid ? displayAsGrid() : displayAsList()}
+  </>
   );
 }
 
