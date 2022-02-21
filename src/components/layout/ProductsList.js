@@ -9,10 +9,10 @@ const ProductList = ({
 }) => {
   const displayAsGrid = () => {
     return (
-      <Row xs={3} >
+      <Row xs={3} class="product-list">
         {products.map((product, index) => {
           return (
-            <div key={index} className='mb-4 product-list'>
+            <div key={index} className='mb-4'>
               <Card>
                 <LazyLoadImage className='card-img-top'
                     alt={product.images[0].src.alt}

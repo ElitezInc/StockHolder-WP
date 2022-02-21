@@ -1,11 +1,13 @@
-.card-body {
-    max-height: 400px;
-    overflow: auto;
-}
-
-.card-body-list {
-    max-height: 200px;
-    overflow: auto;
+.product-list {
+    .card-body {
+        max-height: 400px;
+        overflow: auto;
+    }
+    
+    .card-body-list {
+        max-height: 200px;
+        overflow: auto;
+    }
 }
 
 .form-control {

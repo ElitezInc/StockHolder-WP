@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Card, Row, Collapse, Container, Form} from 'react-bootstrap';
 import { useState } from "react";
+import Navigation from '../layout/Navigation';
 
  const CheckoutPage = () => {
 
@@ -91,7 +92,6 @@ import { useState } from "react";
           <Card className='shadow-sm mb-4 bg-white rounded' style={{padding: "0px !important"}}>
               {checkoutStepTop(step, false)}
               <Card.Body style={{padding: "0px"}}>
-                <div>
                   <Card.Header>
                     <h5 class="mb-0">
                       <a class="btn btn-link collapsed text-start" href={window.location.href} onClick={(event) => { event.preventDefault(); setBankOpen(!bankOpen); }} style={{width: "100%", textDecoration: "none"}} aria-expanded={bankOpen}>
@@ -109,10 +109,11 @@ import { useState } from "react";
                       aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </Card.Body>
                   </Collapse>
-                </div>
-                <div>
-                  <div class="card-header" id="headingTwo">
-                    <a class="btn btn-link collapsed" href={window.location.href} style={{width: "100%", textDecoration: "none"}} data-bs-toggle="collapse"
+
+                  
+                    <Card.Header>
+                    <h5 class="mb-0">
+                    <a class="btn btn-link collapsed" href={window.location.href} onClick={(event)=> {event.preventDefault(); setPaypalOpen(!paypalOpen); }} style={{width: "100%", textDecoration: "none"}} data-bs-toggle="collapse"
                       data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <div class="d-flex justify-content-between">
                         <span>PayPal</span>
@@ -123,19 +124,24 @@ import { useState } from "react";
                         </div>
                       </div>
                     </a>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
+                    </h5>
+                    </Card.Header>
+                    <Collapse in={paypalOpen}>
+                      <Card.Body>
                       <input type="text" class="form-control mb-3" placeholder="Paypal email" />
                       <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Complete payment</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="card-header" id="headingThree">
-                      <a class="btn btn-link collapsed" href={window.location.href} style={{width: "100%", textDecoration: "none"}} data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      </div>    
+                      </Card.Body>
+                      </Collapse>   
+                
+
+
+
+
+
+                      <Card.Header>
+                      <a class="btn btn-link collapsed" href={window.location.href}  onClick={(event)=> {event.preventDefault(); setCreditCardOpen(!creditCardOpen); }} style={{width: "100%", textDecoration: "none"}} data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         <div class="d-flex justify-content-between">
                           <span>Credit card</span>
                           <div class="d-flex align-items-center justify-content-between"> 
@@ -147,9 +153,9 @@ import { useState } from "react";
                           </div>
                         </div>
                       </a>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body payment-card-body">
+                      </Card.Header>
+                      <Collapse in={creditCardOpen}>
+                    <Card.Body>
                       <span class="font-weight-normal card-text">Card Number</span>
                       <div class="input">
                         <i class="fa fa-credit-card"></i>
@@ -173,9 +179,8 @@ import { useState } from "react";
                       <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Complete payment</button>
                       </div>
-                    </div>
-                  </div>
-                </div>
+                      </Card.Body>
+                  </Collapse>
               </Card.Body>
           </Card>
         </Col>
@@ -215,12 +220,15 @@ import { useState } from "react";
    }
   
   return (
-    <Container className='mt-3'>
-      <Row>
-        {checkoutStep(2)}
-        {productsList()}
-      </Row>
-    </Container>
+    <>
+      <Navigation logoName={"logo.svg"} />
+      <Container className='mt-3'>
+        <Row>
+          {checkoutStep(2)}
+          {productsList()}
+        </Row>
+      </Container>
+    </>
   );
 }
 
