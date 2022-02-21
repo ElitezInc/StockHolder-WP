@@ -21,7 +21,7 @@ const ProductList = ({
                     width={product.images[0].src.width} />
                   <Card.Body>
                   <a href={window.location.href} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
-                    <div className="card-body-list mt-3" style={{height: '150px'}}>
+                    <div className="card-body-list mt-3" style={{height: '150px', overflow: 'auto'}}>
                       <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
                     </div>
                       <span className="price"> <h5>${product.price}</h5> </span>
