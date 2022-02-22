@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Card, Row, Button} from 'react-bootstrap';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { AuthProvider } from 'react-auth-kit'
 
 const ProductList = ({
   products,

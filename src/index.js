@@ -8,9 +8,8 @@ import HomePage from './components/pages/HomePage'
 import CartPage from './components/pages/CartPage';
 import { CartProvider } from 'react-use-cart';
 import CheckoutPage from './components/pages/CheckoutPage';
-import { builder } from '@builder.io/react'
- 
-builder.init('28dfaf6d02c24581bc359386a322bead');
+import { AuthProvider } from 'react-auth-kit'
+import SignInPage from './components/pages/SignInPage';
 
 const Routing = () => {
     return (
@@ -20,12 +19,28 @@ const Routing = () => {
                 <Route exact path="/cart" element={<CartPage />} />
                 <Route exact path="/products-page" element={<ProductsPage />} />
                 <Route exact path="/checkout-page" element={<CheckoutPage />} />
+
+                <Route path={'/login'} element={<SignInPage/>}/>
+                {/* <Route path={'/secure'} element={
+                    <RequireAuth loginPath={'/login'}>
+                        <DashboardPage/>
+                    </RequireAuth>
+                }/> */}
             </Routes>
         </HashRouter>
     )
 }
 
-ReactDOM.render(<CartProvider><Routing /></CartProvider>, document.getElementById('root'));
+ReactDOM.render(
+<AuthProvider 
+    authType = {'localstorage'}
+    authName = {'_auth'}
+>
+    <CartProvider>
+        <Routing />
+    </CartProvider>                 
+</AuthProvider>, 
+document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
