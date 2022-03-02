@@ -10,6 +10,7 @@ import { CartProvider } from 'react-use-cart';
 import CheckoutPage from './components/pages/CheckoutPage';
 import { AuthProvider } from 'react-auth-kit'
 import SignInPage from './components/pages/SignInPage';
+import CategoryPage from './components/pages/CategoryPage';
 
 const Routing = () => {
     return (
@@ -17,7 +18,8 @@ const Routing = () => {
             <Routes>
                 <Route exact path="/" element={<HomePage />} />
                 <Route exact path="/cart" element={<CartPage />} />
-                <Route exact path="/products-page" element={<ProductsPage />} />
+                <Route exact path="/products-page" element={<CategoryPage />} />
+                <Route exact path="/products-page/:category" element={<ProductsPage />} />
                 <Route exact path="/checkout-page" element={<CheckoutPage />} />
 
                 <Route path={'/login'} element={<SignInPage/>}/>

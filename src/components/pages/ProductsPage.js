@@ -8,10 +8,12 @@ import ProductsList from '../layout/ProductsList';
 import Navigation from '../layout/Navigation';
 import ProductsTopBar from '../layout/ProductsTopBar';
 import {useCart} from "react-use-cart";
+import { useParams } from "react-router-dom";
 
 const ProductsPage = () => {
 
-  const {addItem} = useCart();
+  const { category } = useParams();
+  const { addItem } = useCart();
 
   const productsPerPage = 6;
 
