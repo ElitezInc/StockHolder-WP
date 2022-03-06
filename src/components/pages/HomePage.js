@@ -1,11 +1,10 @@
 import React from 'react';
 import Navigation from '../layout/Navigation';
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Carousel } from "react-bootstrap"
+import { Container} from "react-bootstrap"
 import { useIsAuthenticated, useAuthUser } from 'react-auth-kit';
 import Banner from '../layout/Banner';
 import CategoryIcons from '../layout/CategoryIcons';
-import Newproducts from '../layout/Newproducts';
+import NewProducts from '../layout/NewProducts';
 
 const HomePage = () => {
   const isAuthenticated = useIsAuthenticated();
@@ -21,7 +20,7 @@ const HomePage = () => {
       </Container>
        <Banner />
        <CategoryIcons />
-       <Newproducts />
+       <NewProducts />
     </>
   );
 }

@@ -36,7 +36,6 @@ const CategoryIcons = () => {
           </Row> 
         </Container>
       </div>
-
     );
 }
 

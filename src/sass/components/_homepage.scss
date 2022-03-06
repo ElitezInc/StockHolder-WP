@@ -12,3 +12,23 @@
 .rounded {
     border-radius: 0.35rem !important;
 }
+
+.new-products-list {
+    .card {
+        border: none;
+    }
+    
+    .card-img-top {
+      border-radius: 10px;
+    }
+    
+    .card-body {
+      padding: 0;
+    }
+    
+    .topbar {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
