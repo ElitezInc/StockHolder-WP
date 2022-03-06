@@ -20,7 +20,7 @@ const CategoryIcons = () => {
   ]
 
     return(
-      <div className="mt-3" style={{backgroundColor:"#e9ecef"}}>
+      <div className="mt-4" style={{backgroundColor:"#e9ecef"}}>
         <Container>
           <Row className="d-flex justify-content-center">
             {data.map((iconData) => {
