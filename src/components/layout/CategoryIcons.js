@@ -1,7 +1,5 @@
 import React from 'react';
-import Navigation from '../layout/Navigation';
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Carousel} from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoneyBill, faCar, faWrench } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,68 +17,6 @@ const CategoryIcons = () => {
       "icon": faWrench,
       "title": "Category 2"
     },
-    {
-      "icon": faMoneyBill,
-      "title": "Category Name"
-    },
-    {
-      "icon": faCar,
-      "title": "Category Another"
-    },
-    {
-      "icon": faWrench,
-      "title": "Category 2"
-    },
-    {
-      "icon": faMoneyBill,
-      "title": "Category Name"
-    },
-    {
-      "icon": faCar,
-      "title": "Category Another"
-    },
-    {
-      "icon": faWrench,
-      "title": "Category 2"
-    },
-    {
-      "icon": faMoneyBill,
-      "title": "Category Name"
-    },
-    {
-      "icon": faCar,
-      "title": "Category Another"
-    },
-    {
-      "icon": faWrench,
-      "title": "Category 2"
-    },
-    {
-      "icon": faMoneyBill,
-      "title": "Category Name"
-    },
-    {
-      "icon": faCar,
-      "title": "Category Another"
-    },
-    {
-      "icon": faWrench,
-      "title": "Category 2"
-    },
-    {
-      "icon": faMoneyBill,
-      "title": "Category Name"
-    },
-    {
-      "icon": faCar,
-      "title": "Category Another"
-    },
-    {
-      "icon": faWrench,
-      "title": "Category 2"
-    },
-
-    
   ]
 
     return(

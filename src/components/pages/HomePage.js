@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Carousel } from "react-bootstrap"
 import { useIsAuthenticated, useAuthUser } from 'react-auth-kit';
 import Banner from '../layout/Banner';
 import CategoryIcons from '../layout/CategoryIcons';
+import Newproducts from '../layout/Newproducts';
 
 const HomePage = () => {
   const isAuthenticated = useIsAuthenticated();
@@ -20,6 +21,7 @@ const HomePage = () => {
       </Container>
        <Banner />
        <CategoryIcons />
+       <Newproducts />
     </>
   );
 }
