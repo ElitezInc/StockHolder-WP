@@ -26,7 +26,7 @@ const CategoryIcons = () => {
             {data.map((iconData) => {
               return (
                 <span style={{width: "150px"}} class="text-center mt-3">
-                  <div class="icon-category mb-2rounded d-flex justify-content-center align-items-center mx-auto"> 
+                  <div class="icon-category mb-2 rounded d-flex justify-content-center align-items-center mx-auto"> 
                   <FontAwesomeIcon icon={ iconData.icon }/>
                   </div>
                   <p>{ iconData.title }</p>
