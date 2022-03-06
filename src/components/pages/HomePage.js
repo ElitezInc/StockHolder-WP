@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Carousel } from "react-bootstrap"
 import { useIsAuthenticated, useAuthUser } from 'react-auth-kit';
 import Banner from '../layout/Banner';
+import CategoryIcons from '../layout/CategoryIcons';
 
 const HomePage = () => {
   const isAuthenticated = useIsAuthenticated();
@@ -17,8 +18,8 @@ const HomePage = () => {
       <Container>
         { isAuthenticated() ? auth().name : 'Not authenticated' }
       </Container>
-
-       <Banner/>
+       <Banner />
+       <CategoryIcons />
     </>
   );
 }

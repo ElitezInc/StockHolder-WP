@@ -1,8 +1,9 @@
 import React from 'react';
 import Navigation from '../layout/Navigation';
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Carousel } from "react-bootstrap"
-import { useIsAuthenticated, useAuthUser } from 'react-auth-kit';
+import { Container, Row, Col, Card, Carousel} from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 const Banner = () => {
 
@@ -31,15 +32,14 @@ const Banner = () => {
                   <p class="lead text-white">Trendy Products, Factory Prices, Excellent Service</p>
                   <a href="#" class="btn btn-warning"> Purchase now</a> 
                   <a href="#" class="btn btn-light ms-1"> Learn more </a>
-                </article>
-              </Carousel.Item>
+                </article>                                
+              </Carousel.Item>                                                    
               <Carousel.Item>
-                <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                  </p>
-                </Carousel.Caption>
+              <div class="my-5" style={{maxWidth: "500px"}}>
+                  <h2 class="text-white">Best products & Best options  <br/> It is waiting for you! </h2>
+                  <p class="text-white">No matter how far along you are in your sophistication as an amateur astronomer, there is always one.</p>
+                  <a href="#" class="btn btn-warning"> Buy Now </a>
+                </div>
               </Carousel.Item>
             </Carousel>          
           </Card.Body>       
