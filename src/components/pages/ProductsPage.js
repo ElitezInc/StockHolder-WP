@@ -1,5 +1,5 @@
 import React from 'react';
-import { api } from '../../api'
+import { API } from '../../api'
 import { Container, Row, Col } from "react-bootstrap";
 import Pagination from '../layout/Pagination'
 import { useEffect, useState } from "react";
@@ -24,19 +24,18 @@ const ProductsPage = () => {
 
   useEffect(() => {
     const fetchProducts = () => {
-      api
-        .get("products", {
+      API.getProducts(null, {
           page: currentPage,
           per_page: productsPerPage
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            setTotalProducts(parseInt(response.headers['x-wp-total']));
-            setProducts(response.data);
-          }
-        })
-        .catch((error) => { console.error(error)});
+        }, function(response) {
+          setTotalProducts(parseInt(response.data.pagination.total_products));
+          setProducts(response.data.products);
+        },
+        function(error) {
+          console.error(error)
+        });
     };
+
     fetchProducts();
   }, [productsPerPage, currentPage]);
 
@@ -55,7 +54,10 @@ const ProductsPage = () => {
           <ProductsFilters />
         </Col>
         <Col md={9}>
-          <ProductsTopBar onViewToggle={(value) => setGridView(value)} />
+          <ProductsTopBar
+            totalProducts={totalProducts} 
+            onViewToggle={(value) => setGridView(value)} 
+          />
           <ProductsList 
             products={products} 
             viewAsGrid={viewAsGrid} 

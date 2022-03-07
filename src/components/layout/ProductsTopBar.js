@@ -5,6 +5,7 @@ import { faTh, faBars } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from "react";
 
 const ProductsTopBar = ({
+  totalProducts,
   onViewToggle
 }) => {
   const [view, setViewValue] = useState(true);
@@ -14,7 +15,7 @@ const ProductsTopBar = ({
   return(
       <div style = {{background: 'white'}}>
           <Form className='d-flex'>
-              <span className='me-md-auto'>32 Items found</span>
+              <span className='me-md-auto'>{totalProducts} Items found</span>
               <Form.Select className='me-2' style={{width: '200px'}} aria-label="Default select example">
                 <option>Open this select menu</option>
                 <option value="1">Most expensive</option>

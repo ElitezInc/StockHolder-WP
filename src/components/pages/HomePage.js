@@ -10,8 +10,6 @@ const HomePage = () => {
   const isAuthenticated = useIsAuthenticated();
   const auth = useAuthUser()
 
-  
-
   return (
     <>
       <Navigation logoName={"logo.svg"} />

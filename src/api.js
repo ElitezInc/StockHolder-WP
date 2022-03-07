@@ -1,8 +1,26 @@
-import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+import axios from 'axios'
+
+export class API {
+  static getProducts(category, parameters, onSuccess, onError) {
+    var query = '/wp-json/stockholder/products';
+
+    if (category) {
+      query += '/' + category;
+    }
   
-export const api = new WooCommerceRestApi({
-  url: "http://localhost",
-  consumerKey: "ck_6c43d9b667acd786614f8faf427a243687a7a81e",
-  consumerSecret: "cs_d79dec45583d71e802af4067e9fefb410742bfec",
-  version: "wc/v3",
-});
+    if (parameters) {
+      const queryParameters = Object.keys(parameters).map(key => key + '=' + parameters[key]).join('&');
+      query += '?' + queryParameters;
+    }
+
+    axios.get(query)
+    .then((res)=>{
+        if(res.status === 200) {
+            onSuccess(res);
+        }
+    })
+    .catch(err => {
+        onError(err);
+    });
+  }
+}
