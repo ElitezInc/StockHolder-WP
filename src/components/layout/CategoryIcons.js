@@ -67,7 +67,7 @@ const CategoryIcons = () => {
       <div className="mt-4" style={{backgroundColor:"#e9ecef"}}>
         <Container>
           <Row className="text-center">
-            <h1 style={{margin: "30px"}}>Categories That We Have</h1>
+            <h1 style={{marginTop: "30px", marginBottom: "30px"}}>Categories That We Have</h1>
           </Row>
           <Row className="d-flex justify-content-center">
             {data.map((iconData) => {
