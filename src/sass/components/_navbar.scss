@@ -1,10 +1,16 @@
+.navbar {
+    #basic-nav-dropdown {
+        color: white;
+    }
+}
+
 .shopping-cart-icon {
     top: 7px;
 }
 
 .count-item-cart span{
-cursor: pointer;
-position: relative;
+    cursor: pointer;
+    position: relative;
 }
 
 .count-item-cart span{
@@ -17,5 +23,5 @@ position: relative;
     padding: 3px 5px;
     border-radius: 50%;
     z-index: 1;
-    }
+}
     

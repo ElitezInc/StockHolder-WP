@@ -17,11 +17,58 @@ const CategoryIcons = () => {
       "icon": faWrench,
       "title": "Category 2"
     },
+    {
+      "icon": faMoneyBill,
+      "title": "Category Name"
+    },
+    {
+      "icon": faCar,
+      "title": "Category Another"
+    },
+    {
+      "icon": faWrench,
+      "title": "Category 2"
+    },
+    {
+      "icon": faMoneyBill,
+      "title": "Category Name"
+    },
+    {
+      "icon": faCar,
+      "title": "Category Another"
+    },
+    {
+      "icon": faWrench,
+      "title": "Category 2"
+    },
+    {
+      "icon": faMoneyBill,
+      "title": "Category Name"
+    },
+    {
+      "icon": faCar,
+      "title": "Category Another"
+    },
+    {
+      "icon": faWrench,
+      "title": "Category 2"
+    },
+    {
+      "icon": faMoneyBill,
+      "title": "Category Name"
+    },
+    {
+      "icon": faCar,
+      "title": "Category Another"
+    }
   ]
 
     return(
       <div className="mt-4" style={{backgroundColor:"#e9ecef"}}>
         <Container>
+          <Row className="text-center">
+            <h1>Categories That We Have</h1>
+          </Row>
           <Row className="d-flex justify-content-center">
             {data.map((iconData) => {
               return (
