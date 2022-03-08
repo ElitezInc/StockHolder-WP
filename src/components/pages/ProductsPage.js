@@ -22,9 +22,11 @@ const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [viewAsGrid, setGridView] = useState(true);
 
+  const api = new API();
+
   useEffect(() => {
     const fetchProducts = () => {
-      API.getProducts(null, {
+      api.getProducts(null, {
           page: currentPage,
           per_page: productsPerPage
         }, function(response) {

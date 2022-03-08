@@ -2,7 +2,9 @@ import axios from 'axios';
 import { useSignIn } from 'react-auth-kit';
 
 export class API {
-  static getProducts(category, parameters, onSuccess, onError) {
+  signIn = useSignIn();
+
+  getProducts(category, parameters, onSuccess, onError) {
     var query = '/wp-json/stockholder/products';
 
     if (category) {
@@ -25,17 +27,15 @@ export class API {
     });
   }
 
-  static logIn(userName, password, onSuccess, onError) {
-    const signIn = useSignIn();
-
-    axios.post('/wp-json/jwt-auth/v1/token', { email: userName, password: password })
+  logIn(userName, password, onSuccess, onError) {
+    axios.post('/wp-json/jwt-auth/v1/token', { username: userName, password: password })
       .then((res)=>{
           if(res.status === 200) {
-              if(signIn({token: res.data.token,
-                         tokenType: "Bearer",
-                         expiresIn: 24 * 60 * 7,
-                         authState: {name: res.data.user_nicename, email: res.data.user_email}
-                        }))
+              if(this.signIn({token: res.data.token,
+                 tokenType: "Bearer",
+                 expiresIn: 24 * 60 * 7,
+                 authState: {name: res.data.user_nicename, email: res.data.user_email}
+              }))
               { 
                 onSuccess();
               }

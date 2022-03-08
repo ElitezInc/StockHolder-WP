@@ -3,12 +3,15 @@ import { API } from '../../api';
 import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
-    const [formData, setFormData] = React.useState({email: '', password: ''})
+    const [formData, setFormData] = React.useState({username: '', password: ''})
     const navigate = useNavigate();
 
+    const api = new API();
+
     const onSubmit = (e) => {
-        e.preventDefault()
-        API.logIn(formData.email, formData.password,
+        e.preventDefault();
+
+        api.logIn(formData.username, formData.password,
             function() {
               navigate("/#");
             },
