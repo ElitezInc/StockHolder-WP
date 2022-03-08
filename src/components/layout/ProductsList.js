@@ -8,8 +8,6 @@ const ProductList = ({
   viewAsGrid = true,
   onProductAddToCart
 }) => {
-  console.log(products);
-
   const displayAsGrid = () => {
     return (
       <Row xs={3} className="product-list">
