@@ -12,7 +12,7 @@ const ProductList = ({
 
   const displayAsGrid = () => {
     return (
-      <Row xs={3} class="product-list">
+      <Row xs={3} className="product-list">
         {products.map((product, index) => {
           return (
             <div key={index} className='mb-4'>

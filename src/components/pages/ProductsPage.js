@@ -1,7 +1,7 @@
 import React from 'react';
-import { API } from '../../api'
+import { API } from '../../api';
 import { Container, Row, Col } from "react-bootstrap";
-import Pagination from '../layout/Pagination'
+import Pagination from '../layout/Pagination';
 import { useEffect, useState } from "react";
 import ProductsFilters from '../layout/ProductsFilters';
 import ProductsList from '../layout/ProductsList';

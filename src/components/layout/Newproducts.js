@@ -65,19 +65,19 @@ const NewProducts = () => {
         <Row className="d-flex justify-content-center" className="new-products-list d-flex justify-content-center">
           {data.map((product) => {
                 return (
-                  <div class="col-lg-3 col-md-6 col-sm-6" style={{width: "18rem", marginRight: "15px"}}>
-                    <div class="card mt-3">
+                  <div className="col-lg-3 col-md-6 col-sm-6" style={{width: "18rem", marginRight: "15px"}}>
+                    <div className="card mt-3">
                       <div>
-                        { product.tag ? product.tag == "New" ? <><span class="topbar"> <span class="badge bg-danger"> {product.tag} </span> </span></> :
-                        <><span class="topbar"> <span class="badge bg-warning"> Offer </span> </span></> : 
+                        { product.tag ? product.tag == "New" ? <><span className="topbar"> <span className="badge bg-danger"> {product.tag} </span> </span></> :
+                        <><span className="topbar"> <span className="badge bg-warning"> Offer </span> </span></> : 
                         <></> }
-                        <img height={250} class="card-img-top" src={product.image} />
+                        <img height={250} className="card-img-top" src={product.image} />
                       </div>
-                      <div class="card-body text-center mt-2">
-                        <div class="pt-2">
-                          <strong class="me-1">${product.price}</strong>
-                          <span href="#" class="title text-truncate">{product.title}</span><br/>
-                          <small class="text-muted">{product.attributes}</small>
+                      <div className="card-body text-center mt-2">
+                        <div className="pt-2">
+                          <strong className="me-1">${product.price}</strong>
+                          <span href="#" className="title text-truncate">{product.title}</span><br/>
+                          <small className="text-muted">{product.attributes}</small>
                         </div>
                       </div>
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Form, Collapse, Row } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const ProductsFilters = () => {
