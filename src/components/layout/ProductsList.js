@@ -21,7 +21,7 @@ const ProductList = ({
                     src={product.image_src}
                     width={product.image_src.width} />
                   <Card.Body>
-                  <a href={window.location.href} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
+                  <a href={"/#"} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
                     <div className="card-body-list mt-3" style={{height: '150px', overflow: 'auto'}}>
                       <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
                     </div>
@@ -47,7 +47,7 @@ const ProductList = ({
               <Card>
                 <Row>
                   <Col xl={3} md={4}>
-                    <a href={window.location.href} className="img-wrap"> 
+                    <a href={"/#"} className="img-wrap"> 
                       <LazyLoadImage className='card-img-top'
                       alt={product.image_src.alt}
                       height={product.image_src.height}
@@ -57,7 +57,7 @@ const ProductList = ({
                   </Col>
                   <Col xl={6} md={5} sm={7}>
                     <div className="card-body-list mt-3">
-                      <a href={window.location.href} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
+                      <a href={"/#"} className="title"> <h5>{product.name.replace(/<\/?[^>]+(>|$)/g, "")}</h5> </a>
                       <p> {product.description.replace(/<\/?[^>]+(>|$)/g, "")} </p>
                     </div>
                   </Col>

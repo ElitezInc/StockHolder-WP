@@ -62,7 +62,7 @@ const NewProducts = () => {
         </Row>
       </Container>
       <Container>
-        <Row className="d-flex justify-content-center" className="new-products-list d-flex justify-content-center">
+        <Row className="d-flex justify-content-center new-products-list">
           {data.map((product) => {
                 return (
                   <div className="col-lg-3 col-md-6 col-sm-6" style={{width: "18rem", marginRight: "15px"}}>
