@@ -13,7 +13,7 @@ const SignInPage = () => {
 
         api.logIn(formData.username, formData.password,
             function() {
-              navigate("/#");
+              navigate("/");
             },
             function(error) {
               console.error(error);

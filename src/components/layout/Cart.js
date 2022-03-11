@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from "react-use-cart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     const {
@@ -55,7 +56,7 @@ const Cart = () => {
                         className='btn btn-danger m-2'
                         onClick={() => emptyCart()}
                     >Clear Cart</button>
-                    <a href='/#/checkout-page' className='btn btn-primary m-2'>Buy Now</a>
+                    <Link to='/checkout-page' className='btn btn-primary m-2'>Buy Now</Link>
                 </div>
             </div>
         </section>
