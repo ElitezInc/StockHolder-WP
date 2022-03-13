@@ -23,10 +23,10 @@ const ProductsTopBar = ({
                 <option value="3">Most popular</option>
               </Form.Select>
               <div className="btn-group">
-                  <a href={window.location.hash} onClick={() => setViewValue(false)} className={view ? 'btn btn-outline-secondary' : 'btn btn-outline-secondary active'}>
+                  <a href={"/#"} onClick={() => setViewValue(false)} className={view ? 'btn btn-outline-secondary' : 'btn btn-outline-secondary active'}>
                     <FontAwesomeIcon icon ={faBars} />
                   </a>
-                  <a href={window.location.hash} onClick={() => setViewValue(true)} className={view ? 'btn btn-outline-secondary active' : 'btn btn-outline-secondary'}>
+                  <a href={"/#"} onClick={() => setViewValue(true)} className={view ? 'btn btn-outline-secondary active' : 'btn btn-outline-secondary'}>
                       <FontAwesomeIcon icon ={faTh} /> 
                   </a>
               </div>

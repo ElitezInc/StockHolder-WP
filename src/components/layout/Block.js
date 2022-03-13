@@ -10,7 +10,7 @@ const Block = () => {
   return (
     <Row>
       <Col lg={{ span: 10, offset: 1 }}>
-        <Card className="mt-5" style={{ backgroundColor: "var(--bs-primary)", height: "auto" }}>
+        <Card className="mt-5 bg-primary">
           <Card.Body className="card-body d-flex justify-content-between align-items-center">
             <div>
               <h5 className="text-white">Amazing Gifts</h5>

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './sass/styles.scss';
 import * as serviceWorker from './serviceWorker';
-import {HashRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import ProductsPage from './components/pages/ProductsPage';
 import HomePage from './components/pages/HomePage';
 import CartPage from './components/pages/CartPage';
@@ -13,7 +13,7 @@ import SignInPage from './components/pages/SignInPage';
 
 const Routing = () => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
                 <Route exact path="/" element={<HomePage />} />
                 <Route exact path="/cart" element={<CartPage />} />
@@ -28,7 +28,7 @@ const Routing = () => {
                     </RequireAuth>
                 }/> */}
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

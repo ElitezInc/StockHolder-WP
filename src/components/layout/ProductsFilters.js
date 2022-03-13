@@ -16,7 +16,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href={window.location.href} onClick={(event) => { event.preventDefault(); setTypesOpen(!typesOpen); }} aria-expanded={typesOpen}>
+          <a href={"/#"} onClick={(event) => { event.preventDefault(); setTypesOpen(!typesOpen); }} aria-expanded={typesOpen}>
             <FontAwesomeIcon icon={typesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Product type</h6>
           </a>
@@ -35,25 +35,25 @@ const ProductsFilters = () => {
             </Form>
             <ul className="list-menu">
               <li>
-                <a href={window.location.href}>People </a>
+                <a href={"/#"}>People </a>
               </li>
               <li>
-                <a href={window.location.href}>Watches </a>
+                <a href={"/#"}>Watches </a>
               </li>
               <li>
-                <a href={window.location.href}>Cinema </a>
+                <a href={"/#"}>Cinema </a>
               </li>
               <li>
-                <a href={window.location.href}>Clothes </a>
+                <a href={"/#"}>Clothes </a>
               </li>
               <li>
-                <a href={window.location.href}>Home items </a>
+                <a href={"/#"}>Home items </a>
               </li>
               <li>
-                <a href={window.location.href}>Animals</a>
+                <a href={"/#"}>Animals</a>
               </li>
               <li>
-                <a href={window.location.href}>People </a>
+                <a href={"/#"}>People </a>
               </li>
             </ul>
           </Card.Body>
@@ -66,7 +66,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href={window.location.href} onClick={(event) => { event.preventDefault(); setBrandsOpen(!brandsOpen); }} aria-expanded={brandsOpen}>
+          <a href={"/#"} onClick={(event) => { event.preventDefault(); setBrandsOpen(!brandsOpen); }} aria-expanded={brandsOpen}>
             <FontAwesomeIcon icon={brandsOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Brands</h6>
           </a>
@@ -126,7 +126,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href={window.location.href} onClick={(event) => { event.preventDefault(); setPricesOpen(!pricesOpen); }} aria-expanded={pricesOpen}>
+          <a href={"/#"} onClick={(event) => { event.preventDefault(); setPricesOpen(!pricesOpen); }} aria-expanded={pricesOpen}>
             <FontAwesomeIcon icon={pricesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Price range</h6>
           </a>
@@ -157,7 +157,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href={window.location.href} onClick={(event) => { event.preventDefault(); setSizesOpen(!sizesOpen); }} aria-expanded={sizesOpen}>
+          <a href={"/#"} onClick={(event) => { event.preventDefault(); setSizesOpen(!sizesOpen); }} aria-expanded={sizesOpen}>
             <FontAwesomeIcon icon={sizesOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">Size</h6>
           </a>
@@ -192,7 +192,7 @@ const ProductsFilters = () => {
     return (
       <Card>
         <Card.Header>
-          <a href={window.location.href} onClick={(event) => { event.preventDefault(); setMoreOpen(!MoreOpen); }} aria-expanded={MoreOpen}>
+          <a href={"/#"} onClick={(event) => { event.preventDefault(); setMoreOpen(!MoreOpen); }} aria-expanded={MoreOpen}>
             <FontAwesomeIcon icon={MoreOpen ? faChevronDown : faChevronRight} className='icon-control' />
             <h6 className="title">More filter</h6>
           </a>

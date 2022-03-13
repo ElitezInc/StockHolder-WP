@@ -50,7 +50,7 @@ const Banner = () => {
             <Card.Body className="card-body right text-center mt-4" style={{ height: "250px" }}>
               <h5 className="mt-3 text-white">Amazing Gifts</h5>
               <p className="text-white">No matter how far along you are in your sophistication</p>
-              <a href={window.location.href} className="btn btn-outline-light"> View more </a>
+              <a href={"/#"} className="btn btn-outline-light"> View more </a>
             </Card.Body>
           </Card>
         </Col>
