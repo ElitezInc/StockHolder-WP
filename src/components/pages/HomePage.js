@@ -6,6 +6,7 @@ import CategoryIcons from '../layout/CategoryIcons';
 import Products from '../layout/Products';
 import Block from '../layout/Block';
 import { API } from '../../api';
+import Blockcategory from '../layout/Blockcategory';
 
 const HomePage = () => {
 
@@ -111,6 +112,7 @@ const HomePage = () => {
         <Block />
        </Container>
        <Products listTitle="Newest Products" products={newestProducts} />
+       <Blockcategory/>
     </>
   );
 }
