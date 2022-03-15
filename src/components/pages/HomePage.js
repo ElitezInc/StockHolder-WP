@@ -7,6 +7,7 @@ import Products from '../layout/Products';
 import Block from '../layout/Block';
 import { API } from '../../api';
 import Blockcategory from '../layout/Blockcategory';
+import FooterPadding from '../layout/FooterPadding';
 
 const HomePage = () => {
 
@@ -113,6 +114,7 @@ const HomePage = () => {
        </Container>
        <Products listTitle="Newest Products" products={newestProducts} />
        <Blockcategory/>
+       <FooterPadding/>
     </>
   );
 }

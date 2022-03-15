@@ -17,7 +17,7 @@ const Blockcategory = () => {
   ]
 
   return (
-    <div style={{ backgroundColor: "#e9ecef" }}>
+    <div className='mt-4' style={{ backgroundColor: "#e9ecef" }}>
       <Container>
         <Col className="d-flex justify-content-between">
           <InputGroup className="mb-3 mt-3" style={{ width: "400px" }}>
